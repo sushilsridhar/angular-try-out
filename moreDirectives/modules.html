@@ -1,0 +1,19 @@
+<html ng-app="mainModule">
+<head>
+    <script src="/Users/sushil/Documents/coderbyte/AngularJS/Thinking in Angular/angular.js"></script>
+    <script src="mainModule.js"></script>
+    <script src="subModule.js"></script>
+
+    <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
+    <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+</head>
+<body>
+    <div ng-controller="controller as ctrl">
+        <p> {{ctrl.message}}</p>
+    </div>
+    <div ng-controller="MainCtrl">
+        <tags-input ng-model="tags"></tags-input>
+        <p>Model: {{tags}}</p>
+    </div>
+</body>
+</html>

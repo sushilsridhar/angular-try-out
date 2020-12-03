@@ -1,0 +1,30 @@
+<html ng-app="moreDirectives">
+<head>
+    <script src="/Users/sushil/Documents/coderbyte/AngularJS/Thinking in Angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="moreDirectivesController as ctrl">
+        <input type="checkbox" ng-model="ctrl.check"/> 
+        <p ng-if="ctrl.check"> Hello WOrld :D :P :O </p> 
+
+        <p ng-show="ctrl.check"> Hello WOrld :D :P :O </p> 
+
+        <p ng-hide="ctrl.check"> Hello WOrld :D :P :O </p> 
+
+        <div ng-repeat="i in ctrl.myList"> 
+            <p>
+                {{$index}}
+            </p>
+            <p>
+                Name :{{i.name}}
+            </p>
+            <p>
+                Age :{{i.age}}
+            </p>
+            <hr/>
+        </div> 
+
+    </div>
+</body>
+</html>

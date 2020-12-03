@@ -1,0 +1,18 @@
+<html ng-app="myscreenSize">
+<head>
+    <script src="/Users/sushil/Documents/coderbyte/AngularJS/Thinking in Angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="screenController as ctrl">
+        <p>{{ctrl.message}}</p>
+        <p> Hello you browser size is {{ctrl.innerheight}} {{ctrl.innerwidth}}</p>
+        <p> Hello you screen size is {{ctrl.outerheight}} {{ctrl.outerwidth}}</p>
+        <p> Hello you offset screen size is {{ctrl.offsetheight}} {{ctrl.offsetwidth}}</p>
+        <p> height : {{ctrl.height}} width :{{ctrl.width}}</p>
+        
+        
+    </div>
+        
+</body>
+</html>

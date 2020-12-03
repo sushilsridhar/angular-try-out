@@ -1,0 +1,15 @@
+<html ng-app="NestedController">
+<head>
+    <script src="angular.js"></script>
+    <script src="nestedcontrollersApp.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl1 as c1">
+       <p> {{c1.message1}}</p>     
+        <div ng-controller="ctrl2 as c2">
+            <p>{{c2.message1}}</p>
+        </div>
+    </div>
+
+</body>
+</html>

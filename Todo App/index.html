@@ -1,0 +1,28 @@
+<html ng-app="TodoApp">
+    <head>
+        <script src="/Users/sushil/Documents/coderbyte/AngularJS/Thinking in Angular/angular.js"></script>
+        <script src="app.js"></script> 
+    </head>
+<body>
+    <h1>Todo App</h1>
+    <div ng-controller="todoController as ctrl"> 
+        <h3> Add a Todo : </h3>
+        <input type="text" ng-model="ctrl.todoItem" />
+        <button ng-click="ctrl.addItem()">Add </button>
+        
+        <h3> Your Todo List : </h3>
+         <button ng-show=!ctrl.flag ng-click="ctrl.editItem(true)">Edit</button>
+         <button ng-show=ctrl.flag ng-click="ctrl.editItem(false)">Save</button>
+        
+            <div ng-repeat="i in ctrl.todoList track by $index">
+                <p ng-if=ctrl.flag>{{$index+1}}.<input type="text" ng-model=i ng-change="ctrl.updateItem($index,i)" value={{i}} />
+                   <!-- <button ng-click="ctrl.deItem($index)">Delete</button> -->
+                </p>
+                <p ng-if=!ctrl.flag>{{$index+1}}. {{i}}
+                    <button ng-click="ctrl.deleteItem($index)">Delete</button>
+                </p>
+            
+            </div>
+    </div>
+</body>
+</html>

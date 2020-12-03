@@ -1,0 +1,67 @@
+
+<html>
+<style>
+/*div {
+ transition: all linear 0.5s;
+ background-color: lightblue;
+ height: 100px;
+}
+
+.ng-hide {
+ height: 0;
+}
+ */
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+<body>
+
+<script>
+var app=angular.module("MyShoppingList",['ngAnimate']);
+app.controller("myCtrl",function($scope)
+{
+$scope.products=["Milk","Bread","Cheese"];
+    console.log($scope.products);
+    
+$scope.addItem=function(addMe)
+{
+    
+    $scope.errortext="";
+    if(!$scope.addMe){return;}
+    if($scope.products.indexOf($scope.addMe) == -1){
+        $scope.products.push($scope.addMe);
+    }
+    else
+    {
+        $scope.errortext="Item Already present";
+    } 
+}
+
+$scope.removeItem=function(x)
+{
+$scope.products.splice(x,1);
+} 
+
+$scope.flag= true;
+$scope.setFlag = function(flag) {
+        $scope.flag= flag;
+    }
+
+}); 
+</script>
+
+<div ng-app="MyShoppingList" ng-controller="myCtrl">
+<h1>Hide the DIV: <input type="checkbox" ng-click="setFlag(false)"></h1>
+<div ng-if=flag> HIDE ME </div>
+<ul>
+<li ng-repeat="x in products">{{x}}
+<span ng-click="removeItem($index)">&times;</span>
+</li>
+</ul>
+<input ng-model="addMe"> {{addMe}}
+<button ng-click="addItem($scope.addMe)">Add</button>
+</div>
+<p> have created a simple program using controller</p>
+</body>
+</html> 
+

@@ -1,0 +1,19 @@
+<html ng-app="ClockModule">
+<head>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="getTime">
+        <p>Please enter your name <input ng-model="userName" type="text" />
+        <p> Current Time is {{date}} </p>
+        <p> Hello {{userName}} </p>
+        <button ng-click="updateDate()">Update </button>
+
+    </div>
+   
+    <div ng-controller="validatePwd">
+            <p> Enter your password : <input type="text" ng-model="password" ng-change="pwdValidate()" /></p>
+            <p>{{message}}</p>
+    </div>
+</body>

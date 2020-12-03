@@ -1,0 +1,25 @@
+<html ng-app ="myFirstApp">
+<head>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="mainCtrl">
+        <h1> Hello Angular : D </h1>
+        <p ng-if="hourOfDay < 10">Good morning :O</p>
+        <p ng-if="hourOfDay >= 12">Good evening : P </p> 
+        <p>The hour is : <span ng-bind="hourOfDay"></span></p>
+        <p> {{hourOfDay}} </p>
+    </div>
+    <script>
+        var module = angular.module("myFirstApp",[]);  
+        module.controller("mainCtrl",Main);
+
+        function Main($scope)
+        {
+            $scope.hourOfDay = 12;
+            console.log(angular);
+        }
+        
+    </script>
+</body>
+</html>
